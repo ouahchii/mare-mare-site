@@ -324,6 +324,12 @@ function wireLinks() {
   const igBtn = document.getElementById("contact-instagram");
   if (igBtn) igBtn.href = CONFIG.instagramUrl;
 
+  const heroFb = document.getElementById("hero-facebook");
+  if (heroFb) heroFb.href = CONFIG.facebookUrl;
+
+  const heroIg = document.getElementById("hero-instagram");
+  if (heroIg) heroIg.href = CONFIG.instagramUrl;
+
   const footerFb = document.getElementById("footer-facebook");
   if (footerFb) footerFb.href = CONFIG.facebookUrl;
 

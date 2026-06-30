@@ -44,6 +44,21 @@
       <a href="#menu" class="btn btn-solid-white" data-i18n="hero.cta_menu">Voir le menu</a>
       <a href="#" id="hero-call" class="btn btn-outline-white" data-i18n="hero.cta_call">Appeler</a>
     </div>
+    <div class="hero-info-bar">
+      <div class="hero-info-item">
+        <svg class="hero-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span data-i18n="contact.hours_main">Mar – Dim : 11h30 – 22h30</span>
+      </div>
+      <span class="hero-info-sep">·</span>
+      <div class="hero-info-socials">
+        <a id="hero-facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook" class="hero-social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a id="hero-instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram" class="hero-social-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -124,26 +139,41 @@
   </div>
   <div class="contact-inner">
     <div class="contact-info">
-      <p class="contact-field">
+      <div class="contact-field">
         <span class="contact-label" data-i18n="contact.address_label">Adresse</span>
         <span class="contact-value" data-i18n="contact.address_value">Rue les Palmiers, Khzema Est, Sousse</span>
-      </p>
-      <p class="contact-field">
+      </div>
+      <div class="contact-field">
         <span class="contact-label" data-i18n="contact.hours_label">Horaires</span>
-        <span class="contact-value" data-i18n="contact.hours_value">À confirmer</span>
-      </p>
-      <p class="contact-field">
+        <span class="contact-value" data-i18n="contact.hours_main">Mar – Dim : 11h30 – 22h30</span>
+        <span class="contact-value contact-hours-note" data-i18n="contact.hours_note">Lun : 17h00 – 22h30</span>
+      </div>
+      <div class="contact-field">
         <span class="contact-label" data-i18n="contact.phone_label">Téléphone</span>
         <span class="contact-value" id="contact-phone">+216 73 244 250</span>
-      </p>
+      </div>
       <div class="contact-btns">
-        <a href="#" id="contact-call"  class="btn btn-primary"  data-i18n="contact.call">Appeler</a>
-        <a href="#" id="contact-maps"  class="btn btn-outline"  data-i18n="contact.maps">Voir sur Google Maps</a>
-        <a href="#" id="contact-glovo" class="btn btn-outline"  data-i18n="contact.glovo">Livraison Glovo</a>
+        <a href="#" id="contact-call" class="btn btn-primary">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12.31 19.79 19.79 0 0 1 1.88 3.7 2 2 0 0 1 3.87 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span data-i18n="contact.call">Appeler</span>
+        </a>
+        <a href="#" id="contact-maps" class="btn btn-outline">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="contact.maps">Voir sur Google Maps</span>
+        </a>
+        <a href="#" id="contact-glovo" class="btn btn-outline">
+          <span data-i18n="contact.glovo">Livraison Glovo</span>
+        </a>
       </div>
       <div class="contact-social">
-        <a href="#" id="contact-facebook"  target="_blank" rel="noopener" class="social-pill" data-i18n="contact.facebook">Facebook</a>
-        <a href="#" id="contact-instagram" target="_blank" rel="noopener" class="social-pill" data-i18n="contact.instagram">Instagram</a>
+        <a href="#" id="contact-facebook" target="_blank" rel="noopener" class="social-pill">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          <span data-i18n="contact.facebook">Facebook</span>
+        </a>
+        <a href="#" id="contact-instagram" target="_blank" rel="noopener" class="social-pill">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          <span data-i18n="contact.instagram">Instagram</span>
+        </a>
       </div>
     </div>
     <div class="map-embed" id="map-embed" aria-label="Carte du restaurant"></div>
@@ -153,9 +183,11 @@
 <!-- STICKY BOTTOM BAR -->
 <div class="sticky-bar">
   <a href="#" id="sticky-call" class="sticky-btn sticky-call">
+    <svg class="sticky-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 12.31 19.79 19.79 0 0 1 1.88 3.7 2 2 0 0 1 3.87 1.5h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     <span data-i18n="sticky.call">Appeler</span>
   </a>
   <a href="#" id="sticky-maps" class="sticky-btn sticky-maps">
+    <svg class="sticky-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
     <span data-i18n="sticky.directions">Itinéraire</span>
   </a>
 </div>
@@ -163,9 +195,15 @@
 <footer class="site-footer">
   <p data-i18n="footer.text">Mare Mar Ouahchi — Sousse, Tunisie</p>
   <div class="footer-social">
-    <a id="footer-facebook"  href="#" target="_blank" rel="noopener" data-i18n="contact.facebook">Facebook</a>
+    <a id="footer-facebook" href="#" target="_blank" rel="noopener" class="footer-social-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      <span data-i18n="contact.facebook">Facebook</span>
+    </a>
     <span class="footer-dot">&middot;</span>
-    <a id="footer-instagram" href="#" target="_blank" rel="noopener" data-i18n="contact.instagram">Instagram</a>
+    <a id="footer-instagram" href="#" target="_blank" rel="noopener" class="footer-social-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      <span data-i18n="contact.instagram">Instagram</span>
+    </a>
   </div>
   <p class="footer-copy">&copy; 2024 Mare Mar Ouahchi</p>
 </footer>
