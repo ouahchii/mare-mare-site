@@ -103,8 +103,8 @@ img { max-width: 100%; display: block; }
   position: relative;
   min-height: 100vh;
   background:
-    linear-gradient(rgba(107,16,32,0.48), rgba(107,16,32,0.60)),
-    url('../assets/gallery/Mare%20MARR/poisson1.jpg') center/cover no-repeat;
+    linear-gradient(rgba(10,5,5,0.48), rgba(10,5,5,0.58)),
+    url('../assets/gallery/hero.png') center/cover no-repeat;
   display: flex;
   align-items: center; justify-content: center;
   padding: 80px 24px;
