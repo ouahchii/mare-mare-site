@@ -221,10 +221,12 @@ function renderMenu() {
 
   grid.innerHTML = "";
   const lang = document.documentElement.lang || "fr";
+  const categories = CONFIG.menuCategories;
 
-  CONFIG.menuCategories.forEach(category => {
+  categories.forEach((category, idx) => {
     const catEl = document.createElement("div");
     catEl.className = "menu-category";
+    catEl.id = `cat-${idx}`;
 
     const header = document.createElement("div");
     header.className = "menu-cat-header";
@@ -251,6 +253,25 @@ function renderMenu() {
 
     grid.appendChild(catEl);
   });
+
+  // Rebuild category tab bar
+  const tabsBar = document.getElementById("menu-tabs-bar");
+  if (tabsBar) {
+    tabsBar.innerHTML = categories.map((cat, i) =>
+      `<button class="menu-tab" data-cat="${i}">${cat.title[lang] || cat.title.fr}</button>`
+    ).join('');
+    tabsBar.querySelectorAll('.menu-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = document.getElementById(`cat-${btn.dataset.cat}`);
+        if (target) {
+          const navH = 56;
+          const tabsH = tabsBar.offsetHeight || 48;
+          const top = target.getBoundingClientRect().top + window.scrollY - navH - tabsH;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  }
 }
 
 function renderGallery() {
@@ -263,7 +284,10 @@ function renderGallery() {
     img.src = src.split("/").map(encodeURIComponent).join("/");
     img.alt = `Mare Mar Ouahchi — photo ${i + 1}`;
     img.loading = "lazy";
-    grid.appendChild(img);
+    const item = document.createElement("div");
+    item.className = "gallery-item";
+    item.appendChild(img);
+    grid.appendChild(item);
   });
 }
 
@@ -300,6 +324,12 @@ function wireLinks() {
   const igBtn = document.getElementById("contact-instagram");
   if (igBtn) igBtn.href = CONFIG.instagramUrl;
 
+  const footerFb = document.getElementById("footer-facebook");
+  if (footerFb) footerFb.href = CONFIG.facebookUrl;
+
+  const footerIg = document.getElementById("footer-instagram");
+  if (footerIg) footerIg.href = CONFIG.instagramUrl;
+
   const mapEmbed = document.getElementById("map-embed");
   if (mapEmbed) {
     if (CONFIG.googleMapsEmbedUrl) {
@@ -321,10 +351,24 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.toggle("scrolled", window.scrollY > 60);
     });
   }
-});
 
-// Re-render menu when language changes
-document.addEventListener("DOMContentLoaded", () => {
+  // Active nav link as user scrolls between sections
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  if (sections.length && navLinks.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-56px 0px -55% 0px', threshold: 0 });
+    sections.forEach(s => sectionObserver.observe(s));
+  }
+
+  // Re-render menu when language changes
   document.querySelectorAll(".lang-tab").forEach(tab => {
     tab.addEventListener("click", () => {
       setTimeout(() => { renderMenu(); }, 0);
