@@ -18,6 +18,8 @@ const translations = {
     "contact.call": "Appeler",
     "contact.glovo": "Livraison Glovo",
     "contact.maps": "Voir sur Google Maps",
+    "contact.facebook": "Facebook",
+    "contact.instagram": "Instagram",
     "sticky.call": "Appeler",
     "sticky.directions": "Itinéraire",
     "footer.text": "Mare Mar Ouahchi — Sousse, Tunisie"
@@ -40,6 +42,8 @@ const translations = {
     "contact.call": "اتصل بنا",
     "contact.glovo": "توصيل عبر Glovo",
     "contact.maps": "شاهد على خرائط Google",
+    "contact.facebook": "فيسبوك",
+    "contact.instagram": "إنستغرام",
     "sticky.call": "اتصل",
     "sticky.directions": "الاتجاهات",
     "footer.text": "مار مار الوحشي — سوسة، تونس"
@@ -62,6 +66,8 @@ const translations = {
     "contact.call": "Call us",
     "contact.glovo": "Glovo Delivery",
     "contact.maps": "View on Google Maps",
+    "contact.facebook": "Facebook",
+    "contact.instagram": "Instagram",
     "sticky.call": "Call",
     "sticky.directions": "Directions",
     "footer.text": "Mare Mar Ouahchi — Sousse, Tunisia"

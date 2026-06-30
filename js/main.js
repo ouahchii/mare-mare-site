@@ -3,8 +3,10 @@ const CONFIG = {
   phoneDisplay: "+216 73 244 250",
   phoneLink: "tel:+21673244250",
   glovoUrl: "",           // ADD when available — leave empty to hide button
-  googleMapsUrl: "https://maps.google.com/?q=Rue+les+Palmiers+Khzema+Est+Sousse",
+  googleMapsUrl: "https://maps.app.goo.gl/DXmjEQfioW4HURas9",
   googleMapsEmbedUrl: "", // ADD embed src from Google Maps "Share > Embed"
+  facebookUrl: "https://www.facebook.com/Mare.mar.ouahchi/",
+  instagramUrl: "https://www.instagram.com/restaurant.ouahchi/",
 
   // Prices corrected from printed menu (2024 version)
   menuCategories: [
@@ -258,6 +260,12 @@ function wireLinks() {
 
   const stickyCall = document.getElementById("sticky-call");
   if (stickyCall) stickyCall.href = CONFIG.phoneLink;
+
+  const fbBtn = document.getElementById("contact-facebook");
+  if (fbBtn) fbBtn.href = CONFIG.facebookUrl;
+
+  const igBtn = document.getElementById("contact-instagram");
+  if (igBtn) igBtn.href = CONFIG.instagramUrl;
 
   const mapEmbed = document.getElementById("map-embed");
   if (mapEmbed) {
