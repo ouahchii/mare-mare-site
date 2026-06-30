@@ -338,11 +338,11 @@ function wireLinks() {
 
   const mapEmbed = document.getElementById("map-embed");
   if (mapEmbed) {
-    if (CONFIG.googleMapsEmbedUrl) {
-      mapEmbed.innerHTML = `<iframe src="${CONFIG.googleMapsEmbedUrl}" width="100%" height="100%" style="border:0; min-height:280px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
-    } else {
-      mapEmbed.textContent = "Carte Google Maps à venir";
-    }
+    const embedSrc = CONFIG.googleMapsEmbedUrl ||
+      "https://maps.google.com/maps?q=" +
+      encodeURIComponent("Mare Mar Ouahchi, Rue les Palmiers, Khzema Est, Sousse, Tunisie") +
+      "&output=embed&z=16&hl=fr";
+    mapEmbed.innerHTML = `<iframe src="${embedSrc}" width="100%" height="100%" style="border:0;min-height:280px;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>`;
   }
 }
 
