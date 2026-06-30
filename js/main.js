@@ -174,11 +174,44 @@ const CONFIG = {
   ],
 
   galleryImages: [
-    "assets/gallery/photo-01.jpg",
-    "assets/gallery/photo-02.jpg",
-    "assets/gallery/photo-03.jpg",
-    "assets/gallery/photo-04.jpg",
-    "assets/gallery/photo-05.jpg"
+    "assets/gallery/Mare MARR/poisson1.jpg",
+    "assets/gallery/Mare MARR/Fruits de Mer/Calamar Doré.jpg",
+    "assets/gallery/Mare MARR/Fruits de Mer/Chevrettes sauce a l'ail.jpg",
+    "assets/gallery/Mare MARR/Fruits de Mer/Chevrette Panées 2.jpg",
+    "assets/gallery/Mare MARR/Les entrées/Ojja Fruit de Mer.jpg",
+    "assets/gallery/Mare MARR/Les entrées/Ojja Merguez (3).jpg",
+    "assets/gallery/Mare MARR/Les entrées/Soupe de Poisson et Brik.jpg",
+    "assets/gallery/Mare MARR/Les hors d'oeuvre/Salade Mechwiya.jpg",
+    "assets/gallery/Mare MARR/Les hors d'oeuvre/Salade Variée.jpg",
+    "assets/gallery/Mare MARR/Les hors d'oeuvre/Salade mechouia et salade Tunisienne.jpg",
+    "assets/gallery/Mare MARR/Les hors d'oeuvre/Salade.jpg",
+    "assets/gallery/Mare MARR/Les Pates/Paella (2).jpg",
+    "assets/gallery/Mare MARR/Les Pates/Sp Fruits de Mer.jpg",
+    "assets/gallery/Mare MARR/Les Pates/Riz Fruits de Mer.jpg",
+    "assets/gallery/Mare MARR/Les Pates/Lasagne (2).jpg",
+    "assets/gallery/Mare MARR/Les Pates/Sp Bolognaise (2).jpg",
+    "assets/gallery/Mare MARR/Les Pates/Sp à l'émincé de Poulet.jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Steak grillé.jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Mixtes (2).jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Foie Du veau.jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Cotelettes D'agneau.jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Plat Merguez.jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Steak haché (2).jpg",
+    "assets/gallery/Mare MARR/Les Viandes/Steak Panée (2).jpg",
+    "assets/gallery/Mare MARR/Burger/Big Mac.jpg",
+    "assets/gallery/Mare MARR/Burger/Big Cheese.jpg",
+    "assets/gallery/Mare MARR/Burger/Mac.jpg",
+    "assets/gallery/Mare MARR/Burger/Cheese.jpg",
+    "assets/gallery/Mare MARR/Burger/Big Mac panée.jpg",
+    "assets/gallery/Mare MARR/Burger/Big Cheese Panée 2.jpg",
+    "assets/gallery/Mare MARR/Burger/Mac Panée.jpg",
+    "assets/gallery/Mare MARR/Burger/Cheese Panée 3.jpg",
+    "assets/gallery/Mare MARR/Les Sandwichs/Makloub.jpg",
+    "assets/gallery/Mare MARR/Les Sandwichs/Malfouf.jpg",
+    "assets/gallery/Mare MARR/Les Sandwichs/Sandwich.jpg",
+    "assets/gallery/Mare MARR/Les Sandwichs/Sandwich (2).jpg",
+    "assets/gallery/Mare MARR/Calzone/calzone au chwarma (1).jpg",
+    "assets/gallery/Mare MARR/Calzone/calzone au chwarma (2).jpg"
   ]
 };
 
@@ -227,7 +260,7 @@ function renderGallery() {
   grid.innerHTML = "";
   CONFIG.galleryImages.forEach((src, i) => {
     const img = document.createElement("img");
-    img.src = src;
+    img.src = src.split("/").map(encodeURIComponent).join("/");
     img.alt = `Mare Mar Ouahchi — photo ${i + 1}`;
     img.loading = "lazy";
     grid.appendChild(img);
