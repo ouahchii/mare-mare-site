@@ -34,7 +34,7 @@ All menu data lives in `CONFIG.menuCategories` in `js/main.js` — an array of c
 
 ## Brand
 
-- **Primary red:** `#C8102E`
+- **Primary red:** `#6B1020` (deep wine/burgundy — from the official logo)
 - **Dark/black:** `#111111`
 - **White:** `#FFFFFF`
 - **Font (display):** Arial Black / Impact (system) for headings

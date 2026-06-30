@@ -1,7 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" fill="#C8102E"/>
-  <!-- Wave shape -->
+  <rect width="32" height="32" fill="#6B1020"/>
   <path d="M4 19 Q8 14 12 19 Q16 24 20 19 Q24 14 28 19" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <!-- Fish tail hint -->
   <path d="M6 22 Q4 19 6 16" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
 </svg>
