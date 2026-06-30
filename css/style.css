@@ -164,6 +164,8 @@ img { max-width: 100%; display: block; }
   width: 14px; height: 14px; flex-shrink: 0;
   stroke: rgba(255,255,255,0.85);
 }
+.hero-info-hours { display: flex; flex-direction: column; gap: 2px; }
+.hero-hours-note { font-size: 10px; color: rgba(255,255,255,0.65); letter-spacing: 0.06em; }
 .hero-info-sep { color: rgba(255,255,255,0.35); }
 .hero-info-socials { display: flex; gap: 8px; }
 .hero-social-link {
@@ -513,9 +515,6 @@ img { max-width: 100%; display: block; }
   .map-embed { height: 220px; }
   .menu-tabs-bar { padding: 6px 12px; }
   .menu-tab { padding: 7px 10px; font-size: 10.5px; }
-  /* Language switcher on left, brand name on right */
-  .site-nav-inner { flex-direction: row-reverse; }
-  [dir="rtl"] .site-nav-inner { flex-direction: row; }
   /* Appeler outline button: semi-filled so it's visible on photo */
   .btn-outline-white {
     background: rgba(255,255,255,0.15);
