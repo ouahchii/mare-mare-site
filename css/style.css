@@ -31,13 +31,53 @@ body[dir="rtl"] { font-family: var(--f-ar); }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
+/* ===== SITE NAV ===== */
+.site-nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: background .25s, box-shadow .25s;
+}
+
+.site-nav-inner {
+  max-width: 1040px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center;
+  height: 56px; gap: 24px;
+}
+
+.nav-brand {
+  font-family: var(--f-head);
+  font-size: 17px; font-weight: 900;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex; gap: 20px;
+  flex: 1;
+}
+
+.nav-links a {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--white); }
+[dir="rtl"] .nav-links a { letter-spacing: 0; font-family: var(--f-ar); }
+
+.site-nav.scrolled {
+  background: rgba(17,17,17,0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 12px rgba(0,0,0,.3);
+}
+
 /* ===== LANGUAGE SWITCHER ===== */
 .lang-switch {
-  position: fixed;
-  top: 16px; right: 16px;
-  z-index: 100;
   display: flex;
-  background: rgba(17,17,17,0.88);
+  background: rgba(17,17,17,0.55);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.12);
   overflow: hidden;
@@ -61,7 +101,9 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative;
   min-height: 100vh;
-  background: var(--red);
+  background:
+    linear-gradient(rgba(107,16,32,0.80), rgba(107,16,32,0.88)),
+    url('../assets/gallery/photo-01.jpg') center/cover no-repeat;
   display: flex;
   align-items: center; justify-content: center;
   padding: 80px 24px;
@@ -330,7 +372,8 @@ img { max-width: 100%; display: block; }
 }
 
 /* ===== RTL ===== */
-[dir="rtl"] .lang-switch { right: auto; left: 16px; }
+[dir="rtl"] .site-nav-inner { flex-direction: row-reverse; }
+[dir="rtl"] .nav-links { flex-direction: row-reverse; }
 [dir="rtl"] .about-inner { flex-direction: row-reverse; }
 [dir="rtl"] .about-info { text-align: center; }
 [dir="rtl"] .contact-label { letter-spacing: 0; }
@@ -342,6 +385,7 @@ img { max-width: 100%; display: block; }
   .hero-actions .btn { width: 100%; }
   .contact-btns { max-width: none; }
   .about-inner { flex-direction: column; gap: 24px; text-align: center; }
+  .nav-links { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

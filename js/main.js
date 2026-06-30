@@ -281,6 +281,13 @@ document.addEventListener("DOMContentLoaded", () => {
   wireLinks();
   renderMenu();
   renderGallery();
+
+  const nav = document.getElementById("site-nav");
+  if (nav) {
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 60);
+    });
+  }
 });
 
 // Re-render menu when language changes

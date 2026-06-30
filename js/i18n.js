@@ -1,6 +1,9 @@
 // ===== TRANSLATIONS =====
 const translations = {
   fr: {
+    "nav.menu": "Menu",
+    "nav.gallery": "Photos",
+    "nav.contact": "Contact",
     "hero.tagline": "Cuisine de la mer, face à la mer",
     "hero.cta_menu": "Voir le menu",
     "hero.cta_call": "Appeler",
@@ -25,6 +28,9 @@ const translations = {
     "footer.text": "Mare Mar Ouahchi — Sousse, Tunisie"
   },
   ar: {
+    "nav.menu": "القائمة",
+    "nav.gallery": "الصور",
+    "nav.contact": "تواصل",
     "hero.tagline": "مأكولات بحرية، أمام البحر",
     "hero.cta_menu": "شاهد القائمة",
     "hero.cta_call": "اتصل بنا",
@@ -49,6 +55,9 @@ const translations = {
     "footer.text": "مار مار الوحشي — سوسة، تونس"
   },
   en: {
+    "nav.menu": "Menu",
+    "nav.gallery": "Photos",
+    "nav.contact": "Contact",
     "hero.tagline": "Seaside dining, by the sea",
     "hero.cta_menu": "View menu",
     "hero.cta_call": "Call us",
@@ -92,12 +101,6 @@ function applyLanguage(lang) {
   document.querySelectorAll(".lang-tab").forEach(tab => {
     tab.classList.toggle("active", tab.dataset.lang === lang);
   });
-
-  const ls = document.querySelector(".lang-switch");
-  if (ls) {
-    ls.style.right = RTL_LANGS.includes(lang) ? "auto" : "16px";
-    ls.style.left  = RTL_LANGS.includes(lang) ? "16px" : "auto";
-  }
 
   localStorage.setItem("mare-mare-lang", lang);
 }
