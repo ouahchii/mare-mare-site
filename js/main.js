@@ -1,3 +1,5 @@
+let menuTabObserver = null;
+
 // ===== RESTAURANT CONFIG =====
 const CONFIG = {
   phoneDisplay: "+216 73 244 250",
@@ -260,8 +262,12 @@ function renderMenu() {
     tabsBar.innerHTML = categories.map((cat, i) =>
       `<button class="menu-tab" data-cat="${i}">${cat.title[lang] || cat.title.fr}</button>`
     ).join('');
-    tabsBar.querySelectorAll('.menu-tab').forEach(btn => {
+    tabsBar.querySelectorAll('.menu-tab').forEach((btn, i) => {
+      if (i === 0) btn.classList.add('active');
       btn.addEventListener('click', () => {
+        tabsBar.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        btn.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
         const target = document.getElementById(`cat-${btn.dataset.cat}`);
         if (target) {
           const navH = 56;
@@ -271,6 +277,21 @@ function renderMenu() {
         }
       });
     });
+
+    if (menuTabObserver) menuTabObserver.disconnect();
+    menuTabObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const idx = e.target.id.replace('cat-', '');
+          tabsBar.querySelectorAll('.menu-tab').forEach((t, i) => {
+            t.classList.toggle('active', String(i) === idx);
+          });
+          const activeTab = tabsBar.querySelector('.menu-tab.active');
+          if (activeTab) activeTab.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+        }
+      });
+    }, { rootMargin: `-${56 + 48}px 0px -65% 0px`, threshold: 0 });
+    document.querySelectorAll('.menu-category').forEach(cat => menuTabObserver.observe(cat));
   }
 }
 
