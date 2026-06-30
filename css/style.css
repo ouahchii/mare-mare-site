@@ -496,7 +496,12 @@ img { max-width: 100%; display: block; }
   .contact-btns { max-width: none; }
   .about-inner { flex-direction: column; gap: 24px; text-align: center; }
   .nav-links { display: none; }
-  .hero { padding: 60px 20px; background-position: center 25%; }
+  .hero {
+    padding: 60px 20px;
+    background:
+      linear-gradient(rgba(10,5,5,0.48), rgba(10,5,5,0.58)),
+      url('../assets/gallery/hero-mobile.png') center/cover no-repeat;
+  }
   .hero-logo { width: min(280px, 78vw); }
   .hero-rule { margin: 16px auto; }
   .hero-tagline { margin-bottom: 24px; }
