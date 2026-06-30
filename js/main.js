@@ -172,7 +172,11 @@ const CONFIG = {
   ],
 
   galleryImages: [
-    // "assets/photo1.jpg",
+    "assets/gallery/photo-01.jpg",
+    "assets/gallery/photo-02.jpg",
+    "assets/gallery/photo-03.jpg",
+    "assets/gallery/photo-04.jpg",
+    "assets/gallery/photo-05.jpg"
   ]
 };
 
@@ -219,10 +223,10 @@ function renderGallery() {
   if (!CONFIG.galleryImages.length) return;
 
   grid.innerHTML = "";
-  CONFIG.galleryImages.forEach(src => {
+  CONFIG.galleryImages.forEach((src, i) => {
     const img = document.createElement("img");
     img.src = src;
-    img.alt = "Mare Mar";
+    img.alt = `Mare Mar Ouahchi — photo ${i + 1}`;
     img.loading = "lazy";
     grid.appendChild(img);
   });
