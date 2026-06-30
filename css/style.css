@@ -496,6 +496,13 @@ img { max-width: 100%; display: block; }
   .contact-btns { max-width: none; }
   .about-inner { flex-direction: column; gap: 24px; text-align: center; }
   .nav-links { display: none; }
+  .hero { padding: 60px 20px; background-position: center 25%; }
+  .hero-logo { width: min(280px, 78vw); }
+  .hero-rule { margin: 16px auto; }
+  .hero-tagline { margin-bottom: 24px; }
+  .hero-info-bar { margin-top: 20px; gap: 10px; }
+  .hero-info-sep { display: none; }
+  .map-embed { height: 220px; }
 }
 
 @media (max-width: 520px) {
